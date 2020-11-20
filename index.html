@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>form-v1 by Colorlib</title>
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Font-->
+	<link rel="stylesheet" type="text/css" href="css/opensans-font.css">
+	<link rel="stylesheet" type="text/css" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+	<!-- Main Style Css -->
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css"/>
+	<script>
+        function checkboxlimit(checkgroup, limit) {
+            var checkgroup = checkgroup;
+            var limit = limit
+            for (var i = 0; i < checkgroup.length; i++) {
+                checkgroup[i].onclick = function() {
+                    var checkedcount = 0
+                    for (var i = 0; i < checkgroup.length; i++)
+                        checkedcount += (checkgroup[i].checked) ? 1 : 0
+                    if (checkedcount > limit) {
+                        alert("You can only select a maximum of " + limit + " items from this section")
+                        this.checked = false
+                    }
+                }
+            }
+        }
+	</script>
+	<style>
+        .fa,
+        .fas {
+            color: rgb(47, 56, 65);
+        }
+
+        .btn {
+			background: #3e4061;
+			color: white;
+
+			
+        }
+    </style>
+
+</head>
+<body>
+	<div class="page-content">
+		<div class="form-v1-content">
+			<div class="wizard-form">
+		        <form class="form-register" action="#" method="post">
+		        	<div id="form-total">
+		        		<!-- SECTION 1 -->
+			            <h2>
+			            	<p class="step-icon"><span>01</span></p>
+			            	<span class="step-text">Personal Infomation</span>
+			            </h2>
+			            <section>
+			                <div class="inner">
+			                	<div class="wizard-header">
+									<h3 class="heading">Personal Infomation</h3>
+									<p>Please enter your infomation and proceed to the next step so we can build your accounts.  </p>
+								</div>
+								<div class="form-row">
+									<div class="form-holder form-holder-2">
+										<fieldset>
+											<legend>Your Name</legend>
+											<input type="text" name="name" id="your_email" class="form-control" pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" placeholder="" required>
+										</fieldset>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-holder form-holder-2">
+										<fieldset>
+											<legend>Your Email</legend>
+											<input type="email" name="email" id="your_email" class="form-control" pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" placeholder="@gmail.com/@tkmce.ac.in" required>
+										</fieldset>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-holder">
+										<fieldset>
+											<legend>Date of Birth</legend>
+											<input type="date" class="form-control" id="first-name" name="dob" placeholder="Date of Birth" required>
+										</fieldset>
+									</div>
+									<div class="form-holder">
+										<fieldset>
+											<legend>Batch</legend>
+											<input type="text" class="form-control" id="last-name" name="batch" placeholder="Batch" required>
+										</fieldset>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-holder form-holder-2">
+										<fieldset>
+											<legend>Phone Number</legend>
+											<input type="number" class="form-control" id="phone" name="phone" placeholder="+1 888-999-7777" required>
+										</fieldset>
+									</div>
+								</div>
+								<div class="form-row form-row-date">
+									<div class="form-holder form-holder-2">
+										<label class="special-label">Birth Date:</label>
+										<select name="month" id="month">
+											<option value="MM" disabled selected>MM</option>
+											<option value="16">16</option>
+											<option value="17">17</option>
+											<option value="18">18</option>
+											<option value="19">19</option>
+										</select>
+										<select name="date" id="date">
+											<option value="DD" disabled selected>DD</option>
+											<option value="Feb">Feb</option>
+											<option value="Mar">Mar</option>
+											<option value="Apr">Apr</option>
+											<option value="May">May</option>
+										</select>
+										<select name="year" id="year">
+											<option value="YYYY" disabled selected>YYYY</option>
+											<option value="2017">2017</option>
+											<option value="2016">2016</option>
+											<option value="2015">2015</option>
+											<option value="2014">2014</option>
+											<option value="2013">2013</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-holder form-holder-2">
+										<input type="text" class="form-control input-border" id="ssn" name="ssn" placeholder="SSN" required>
+									</div>
+								</div>
+							</div>
+			            </section>
+						<!-- SECTION 2 -->
+			            <h2>
+			            	<p class="step-icon"><span>02</span></p>
+			            	<span class="step-text">Connect Bank Account</span>
+			            </h2>
+			            <section >
+							<div class='container-fluid'>
+							<h5 class = "checkbox_head" style="color:rgb(109, 111, 216);">Select atleast 2 Interests, 2 Career preferences and 3 Services</h5>
+							<div class="form-row mt-1 mb-1">
+
+								<div class=" form-group col-sm-4 col-12 p-2">
+				
+									<div class="dropdown open drop-1">
+										<button class="btn  dropdown-toggle w-100" type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											<h5 class='title_c'>Special Interest</h5>
+										</button>
+										<div class="dropdown-menu w-100 pl-3 pr-3" aria-labelledby="triggerId">
+											<p class="dropdown-item pt-0 pb-0">
+												<div class="form-check">
+													<div id="check1">
+														<label class="form-check-label">
+															<input type="checkbox" class="form-check-input" name="interest[]" id="" value="Sports">
+															Sports
+														</label>
+													</div>
+													<div class="form-check">
+														<label class="form-check-label">
+															<input type="checkbox" class="form-check-input" name="interest[]" id="" value="Games">
+															Games
+														</label>
+													</div>
+													<div class="form-check">
+														<label class="form-check-label">
+															<input type="checkbox" class="form-check-input" name="interest[]" id="" value="Reading">
+															Reading
+														</label>
+													</div>
+													<div class="form-check">
+														<label class="form-check-label">
+															<input type="checkbox" class="form-check-input" name="interest[]" id="" value="Literacy">
+															Literary
+														</label>
+													</div>
+				
+													<div class="form-check">
+														<label class="form-check-label">
+															<input type="checkbox" class="form-check-input" name="interest[]" id="" value="Drama">
+															Drama
+														</label>
+													</div>
+				
+													<div class="form-check">
+														<label class="form-check-label">
+															<input type="checkbox" class="form-check-input" name="interest[]" id="" value="Music">
+															Music
+														</label>
+													</div>
+													<div class="form-check">
+														<label class="form-check-label">
+															<input type="checkbox" class="form-check-input" name="interest[]" id="" value="Photography">
+															Photography
+														</label>
+													</div>
+													<script type="text/javascript">
+														var array = []
+														var checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
+														if (checkboxes.length < 2) {
+															alert("You can only select a maximum of " + limit + " items from this section")
+															this.checked = false
+														}
+														// checkboxlimit(array, 2)
+													</script>
+												</div>
+				
+											</p>
+				
+										</div>
+									</div>
+								</div>
+				
+				
+				
+								<div class=" form-group col-sm-4 col-12 p-2">
+				
+									<div class="dropdown open  drop-1">
+										<button class="btn  dropdown-toggle w-100" type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											<h5 class='title_c'>Career Preference</h5>
+										</button>
+										<div class="dropdown-menu w-100 pr-3 pl-3" aria-labelledby="triggerId">
+											<p class="dropdown-item" href="#">
+												<div class="form-check">
+													<div id="check2" name="check2">
+														<label class="form-check-label">
+															<input type="checkbox" class="form-check-input" name="career[]" id="" value="Teaching">
+															Teaching
+														</label>
+													</div>
+													<div class="form-check">
+														<label class="form-check-label">
+															<input type="checkbox" class="form-check-input" name="career[]" id="" value="Research Work">
+															Research Work
+														</label>
+													</div>
+													<div class="form-check">
+														<label class="form-check-label">
+															<input type="checkbox" class="form-check-input" name="career[]" id="" value="Government Job">
+															Govt. Job
+														</label>
+													</div>
+													<div class="form-check">
+														<label class="form-check-label">
+															<input type="checkbox" class="form-check-input" name="career[]" id="" value="Public Sector">
+															Public Sector Undertaking
+														</label>
+													</div>
+				
+				
+													<div class="form-check">
+														<label class="form-check-label">
+															<input type="checkbox" class="form-check-input" name="career[]" id="" value="Private">
+															Private Industry
+														</label>
+													</div>
+				
+													<div class="form-check">
+														<label class="form-check-label">
+															<input type="checkbox" class="form-check-input" name="career[]" id="" value="Studies">
+															Higher Studies
+														</label>
+													</div>
+													<div class="form-check">
+														<label class="form-check-label">
+															<input type="checkbox" class="form-check-input" name="career[]" id="" value="Management Studies">
+															Management Studies
+														</label>
+													</div>
+													<script type="text/javascript">
+														checkboxlimit(document.forms.check2.career, 2)
+													</script>
+												</div>
+				
+											</p>
+				
+										</div>
+									</div>
+								</div>
+				
+								<div class=" form-group col-sm-4 col-12  p-2">
+									<div class="dropdown open drop-1">
+										<button class="btn dropdown-toggle w-100" type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											<h5 class='title_c'>Type of services</h5>
+										</button>
+										<div class="dropdown-menu w-100 pr-3 pl-3" aria-labelledby="triggerId">
+											<p class="dropdown-item" href="#">
+												<div class="form-check">
+													<div id="check3">
+														<label class="form-check-label">
+															<input type="checkbox" class="form-check-input" name="services[]" id="" value="Coaching for competitive examination, job interview">
+															Coaching for competitive <br> examination, job interview
+														</label>
+													</div>
+													<div class="form-check">
+														<label class="form-check-label">
+															<input type="checkbox" class="form-check-input" name="services[]" id="" value="Supervisory and
+															communication skill development">
+															Supervisory and
+															communication <br> skill development
+														</label>
+													</div>
+													<div class="form-check">
+														<label class="form-check-label">
+															<input type="checkbox" class="form-check-input" name="services[]" id="" value="Training for self-employment">
+															Training for self-employment
+														</label>
+													</div>
+													<div class="form-check">
+														<label class="form-check-label">
+															<input type="checkbox" class="form-check-input" name="services[]" id="" value="Guidance on job opportunities in India and abroad">
+															Guidance on job opportunities
+															<br>in India and abroad
+														</label>
+													</div>
+				
+				
+													<div class="form-check">
+														<label class="form-check-label">
+															<input type="checkbox" class="form-check-input" name="services[]" id="" value="Arranging training in industries and visit to industry">
+															Arranging training in industries <br> and visit to industry
+														</label>
+													</div>
+				
+													<div class="form-check">
+														<label class="form-check-label">
+															<input type="checkbox" class="form-check-input" name="services[]" id="" value="Awareness on social, cultural and ethical values and norms">
+															Awareness on social, cultural <br> and ethical values and norms
+														</label>
+													</div>
+													<div class="form-check">
+														<label class="form-check-label">
+															<input type="checkbox" class="form-check-input" name="services[]" id="" value="General counselling services">
+															General counselling services
+														</label>
+													</div>
+													<script type="text/javascript">
+														checkboxlimit(document.forms.check3.services, 3)
+													</script>
+												</div>
+											</p>
+				
+				
+										</div>
+									</div>
+								</div>
+				
+				
+				
+				
+				
+							</div>
+						</div>
+				
+			            </section>
+			            <!-- SECTION 3 -->
+			            <h2>
+			            	<p class="step-icon"><span>03</span></p>
+			            	<span class="step-text">Set Financial Goals</span>
+			            </h2>
+			            <section>
+			                <div class="inner">
+			                	<div class="wizard-header">
+									<h3 class="heading">Set Financial Goals</h3>
+									<p>Please enter your infomation and proceed to the next step so we can build your accounts.</p>
+								</div>
+								<div class="form-row">
+			                		<div class="form-holder form-holder-2">
+			                			<input type="radio" class="radio" name="radio1" id="plan-1" value="plan-1">
+			                			<label class="plan-icon plan-1-label" for="plan-1">
+		                					<img src="images/form-v1-icon-2.png" alt="pay-1">
+			                			</label>
+			                			<div class="plan-total">
+		                					<span class="plan-title">Specific Plan</span>
+		                					<p class="plan-text">Pellentesque nec nam aliquam sem et volutpat consequat mauris nunc congue nisi.</p>
+		                				</div>
+			                			<input type="radio" class="radio" name="radio1" id="plan-2" value="plan-2">
+			                			<label class="plan-icon plan-2-label" for="plan-2">
+			                					<img src="images/form-v1-icon-2.png" alt="pay-1">
+			                			</label>
+			                			<div class="plan-total">
+		                					<span class="plan-title">Medium Plan</span>
+		                					<p class="plan-text">Pellentesque nec nam aliquam sem et volutpat consequat mauris nunc congue nisi.</p>
+		                				</div>
+										<input type="radio" class="radio" name="radio1" id="plan-3" value="plan-3" checked>
+										<label class="plan-icon plan-3-label" for="plan-3">
+		                					<img src="images/form-v1-icon-3.png" alt="pay-2">
+										</label>
+										<div class="plan-total">
+		                					<span class="plan-title">Special Plan</span>
+		                					<p class="plan-text">Pellentesque nec nam aliquam sem et volutpat consequat mauris nunc congue nisi.</p>
+		                				</div>
+			                		</div>
+			                	</div>
+							</div>
+			            </section>
+		        	</div>
+		        </form>
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/jquery.steps.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="js/main.js"></script>
+
+
+	
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
